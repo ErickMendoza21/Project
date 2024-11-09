@@ -1,0 +1,16 @@
+---
+interface Props {
+    classCss?: string;
+    idInput: string;
+    text: string;
+    typeInput?: 'text' | 'email' | 'password';
+}
+const { classCss, text, idInput, typeInput = "text" } = Astro.props;
+---
+<div class={classCss}>
+    <input type={typeInput} name="" id={idInput}>
+    <label for={idInput}>{text}</label>
+</div>
+<style>
+
+</style>

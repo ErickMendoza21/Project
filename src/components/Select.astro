@@ -1,0 +1,20 @@
+---
+interface Props {
+    options: Item[]
+}
+
+export interface Item {
+    value: string
+    label: string
+}
+
+const { options } = Astro.props
+---
+
+<select name="" id="">
+    {
+        options.map(({ label, value }) => (
+            <option value={value}>{label}</option>
+        ))
+    }
+</select>

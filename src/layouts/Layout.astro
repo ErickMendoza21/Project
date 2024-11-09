@@ -22,29 +22,42 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+        --color-50: #ebf4ff;
+        --color-100: #daebff;
+        --color-200: #bcd8ff;
+        --color-300: #94beff;
+        --color-400: #6996ff;
+        --color-500: #476fff;
+        --color-600: #2745ff;
+        --color-700: #263de8;
+        --color-800: #192eba;
+        --color-900: #1e3091;
+        --color-950: #121b54;
 	}
-	html {
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+		margin: 0;
 	}
 </style>
+
+
+<!-- 'persian-blue': {
+	'50': '#ebf4ff',
+	'100': '#daebff',
+	'200': '#bcd8ff',
+	'300': '#94beff',
+	'400': '#6996ff',
+	'500': '#476fff',
+	'600': '#2745ff',
+	'700': '#263de8',
+	'800': '#192eba',
+	'900': '#1e3091',
+	'950': '#121b54',
+}, -->
