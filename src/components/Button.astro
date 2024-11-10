@@ -1,3 +1,26 @@
 <button>
     <slot/>
 </button>
+<style>
+    button {
+    background-color: var(--color-primary);
+    padding: 8px 16px;
+    color: var(--color-default);
+    border: none;
+    border-radius: 12px;
+    transition-duration: .4s;
+}
+
+button:not(:disabled):hover {
+    background-color: var(--color-secundary);
+}
+
+button:not(:disabled):active{
+    background-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-tercary);
+}
+
+button:disabled{
+    opacity: 0.5;
+}
+</style>

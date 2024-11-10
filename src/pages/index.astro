@@ -24,10 +24,12 @@ const secondSelect: Item[] = [
 
 <Layout title="Welcome to Astro.">
 	<section>
-		<form action="">
+		<form action="" style="gap: 16px;">
 			<h1>Formulario</h1>
-			<FloatInput idInput='nombre' text='nombre de usuario'></FloatInput>
-			<FloatInput idInput='apellido' text='apellido de usuario'></FloatInput>
+			<div style="display: flex; gap: 8px;">
+				<FloatInput idInput='nombre' text='nombre de usuario'></FloatInput>
+				<FloatInput idInput='apellido' text='apellido de usuario'></FloatInput>
+			</div>
 			<FloatInput idInput='correo' text='correo electronico'></FloatInput>
 			<FloatInput idInput='direccion' text='direccion'></FloatInput>
 			<Select options={firstSelect}/>
@@ -62,4 +64,5 @@ const secondSelect: Item[] = [
 		color: var(--color-950);
 		text-align: center;
 	}
+	
 </style>

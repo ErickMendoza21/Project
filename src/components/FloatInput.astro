@@ -7,10 +7,7 @@ interface Props {
 }
 const { classCss, text, idInput, typeInput = "text" } = Astro.props;
 ---
-<div class={classCss}>
-    <input type={typeInput} name="" id={idInput}>
+<div class="float-label">
+    <input type={typeInput} name="" id={idInput} placeholder="Placeholder">
     <label for={idInput}>{text}</label>
 </div>
-<style>
-
-</style>

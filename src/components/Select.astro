@@ -1,20 +1,23 @@
 ---
 interface Props {
-    options: Item[]
+    options: Item[];
 }
 
 export interface Item {
-    value: string
-    label: string
+    value: string;
+    label: string;
 }
 
-const { options } = Astro.props
+const { options } = Astro.props;
 ---
 
-<select name="" id="">
-    {
-        options.map(({ label, value }) => (
-            <option value={value}>{label}</option>
-        ))
-    }
-</select>
+<div class="float-label">
+    <select name="" id="">
+        {
+            options.map(({ label, value }) => (
+                <option value={value}>{label}</option>
+            ))
+        }
+    </select>
+    <label for="">Producto</label>
+</div>

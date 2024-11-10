@@ -21,19 +21,13 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	:root {
-        --color-50: #ebf4ff;
-        --color-100: #daebff;
-        --color-200: #bcd8ff;
-        --color-300: #94beff;
-        --color-400: #6996ff;
-        --color-500: #476fff;
-        --color-600: #2745ff;
-        --color-700: #263de8;
-        --color-800: #192eba;
-        --color-900: #1e3091;
-        --color-950: #121b54;
-	}
+	:root{
+    /* Variables de CSS */
+    --color-primary: #195bdc; 
+    --color-secundary: #4983f5;
+    --color-tercary: #6797f6;
+    --color-default: #fff;
+}
 
 	* {
 		margin: 0;
@@ -45,6 +39,115 @@ const { title } = Astro.props;
 		font-family: system-ui, sans-serif;
 		margin: 0;
 	}
+
+	.float-label {
+    display: grid;
+    position: relative;
+}
+
+.float-label label {
+    padding: 0 0.25rem;
+    position: absolute;
+    left: 0.75rem;
+    color: #a3a3a3; /* text-neutral-300 */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem; /* text-base */
+    transition: all 0.3s;
+}
+
+.float-label input ~ label,
+.float-label select ~ label {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.float-label textarea ~ label {
+    top: 20px;
+    transform: translateY(-50%);
+}
+
+.float-label input,
+.float-label textarea,
+.float-label select {
+    outline: none;
+    background-color: white;
+    border: 1px solid #f3f4f6; /* border-neutral-100 */
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem; /* text-base */
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s;
+}
+
+.float-label input::placeholder,
+.float-label textarea::placeholder,
+.float-label select::placeholder {
+    color: transparent;
+}
+
+.float-label input:not(:disabled):not(:focus):hover,
+.float-label textarea:not(:disabled):not(:focus):hover,
+.float-label select:not(:disabled):not(:focus):hover {
+    background-color: #e5f3ff; /* bg-primary-50 */
+    border-color: #bde0ff; /* border-primary-100 */
+}
+
+.float-label input:active,
+.float-label textarea:active,
+.float-label select:active {
+    background-color: white;
+    border: 3px solid #66b3ff; /* border-primary-200 */
+}
+
+.float-label input:active ~ label,
+.float-label textarea:active ~ label,
+.float-label select:active ~ label {
+    color: #66b3ff; /* text-primary-300 */
+}
+
+.float-label input:disabled,
+.float-label textarea:disabled,
+.float-label select:disabled {
+    cursor: not-allowed;
+    border-color: #f3f4f6; /* border-neutral-50 */
+    background-color: #f3f4f6; /* bg-neutral-50 */
+}
+
+.float-label input:disabled ~ label,
+.float-label textarea:disabled ~ label,
+.float-label select:disabled ~ label {
+    width: calc(100% - 32px - 8px);
+    cursor: not-allowed;
+    background-color: #f3f4f6; /* bg-neutral-50 */
+}
+
+.float-label input:focus,
+.float-label textarea:focus,
+.float-label select:focus {
+    box-shadow: 0 4px 6px rgba(28, 99, 242, 0.12);
+    border-color: #146FB4; /* border-primary-500 */
+    background-color: white;
+}
+
+.float-label input:focus ~ label,
+.float-label textarea:focus ~ label,
+.float-label select:focus ~ label,
+.float-label input:not(:placeholder-shown) ~ label,
+.float-label textarea:not(:placeholder-shown) ~ label,
+.float-label select:valid ~ label {
+    color: #146FB4;
+    background-color: #fff;
+    top: 0px;
+}
+
+.float-label input.ng-invalid.ng-touched {
+    border-color: red;
+    box-shadow: 0px 0px 4px rgba(255, 0, 0, 0.5);
+}
+
+.float-label input.ng-invalid.ng-touched ~ label {
+    color: red;
+}
 </style>
 
 
